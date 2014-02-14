@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+# @return [String] the path to the 'lib' directory of Inch
+def find_lib_path
+  path = __FILE__
+  while File.symlink?(path)
+    path = File.expand_path(File.readlink(path), File.dirname(path))
+  end
+  File.join(File.dirname(File.expand_path(path)), '..', 'lib')
+end
+
+$LOAD_PATH.unshift(find_lib_path)
+
+require 'inch/badge'
+
+if ARGV.size != 5
+  puts "Usage: inch-badge FILENAME U C B A"
+  exit 1
+end
+
+Inch::Badge::Image.new(ARGV.shift, ARGV).save
