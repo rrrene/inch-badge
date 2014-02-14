@@ -1,6 +1,6 @@
 # Inch::Badge
 
-TODO: Write a gem description
+Rubygem used to generate badges for Inch
 
 ## Installation
 
@@ -18,12 +18,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Shell
 
-## Contributing
+    $ inch-badge FILENAME U C B A
 
-1. Fork it ( http://github.com/<my-github-username>/inch-badge/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+Example:
+
+    $ inch-badge example.png 300 21 12 316
+
+### Ruby
+
+```ruby
+Inch::Badge::Image.new("example.png", [300, 21, 12, 316]).save
+```

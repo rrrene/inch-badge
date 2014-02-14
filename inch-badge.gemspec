@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Inch::Badge::VERSION
   spec.authors       = ["René Föhring"]
   spec.email         = ["rf@bamaru.de"]
-  spec.summary       = %q{Rubygem that generates badges for Inch}
-  spec.description   = %q{Rubygem that generates badges for Inch}
+  spec.summary       = %q{Rubygem used to generate badges for Inch}
+  spec.description   = %q{Rubygem used to generate badges for Inch}
   spec.homepage      = ""
   spec.license       = "MIT"
 
