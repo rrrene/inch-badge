@@ -1,7 +1,7 @@
 module Inch
   module Badge
     class Config
-      GRADE_ORDER = %w(U C B A)
+      GRADE_ORDER = %w(A B C U)
       SECTION_WIDTH = 40 # px
 
       class << self

@@ -14,7 +14,8 @@ $LOAD_PATH.unshift(find_lib_path)
 require 'inch/badge'
 
 if ARGV.size != 5
-  puts "Usage: inch-badge FILENAME U C B A"
+  order = Inch::Badge::Config::GRADE_ORDER.join(' ')
+  puts "Usage: inch-badge FILENAME #{order}"
   exit 1
 end
 
