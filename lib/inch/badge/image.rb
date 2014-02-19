@@ -17,8 +17,6 @@ module Inch
         ((size / overall.to_f) * section_width).round
       end
 
-      private
-
       def section_width
         Config::SECTION_WIDTH
       end
@@ -41,8 +39,10 @@ module Inch
         x = 0
         @grades.each do |grade|
           grade.width.times do |i|
-            badge  = load_image( Config.image_path("grade-#{grade.name}-#{grade.prefix(x)}.png") )
-            base_image.compose!(badge, 34+x, 0)
+            if x < grade.section_width
+              badge  = load_image( Config.image_path("grade-#{grade.name}-#{grade.prefix(x)}.png") )
+              base_image.compose!(badge, 34+x, 0)
+            end
             x += 1
           end
         end
