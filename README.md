@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ### Shell
 
-    $ inch-badge FILENAME U C B A
+    $ inch-badge FILENAME A B C U
 
 Example:
 
