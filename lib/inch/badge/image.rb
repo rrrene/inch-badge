@@ -14,6 +14,7 @@ module Inch
       end
 
       def width
+        return 0 if overall == 0
         ((size / overall.to_f) * section_width).round
       end
 
