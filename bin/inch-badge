@@ -19,4 +19,4 @@ if ARGV.size != 5
   exit 1
 end
 
-Inch::Badge::Image.new(ARGV.shift, ARGV).save
+Inch::Badge::Image.create(ARGV.shift, ARGV)

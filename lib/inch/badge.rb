@@ -1,4 +1,5 @@
 require 'inch/badge/config'
+require 'inch/badge/grade_section'
 require 'inch/badge/image'
 require 'inch/badge/version'
 
