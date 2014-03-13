@@ -28,6 +28,14 @@ Example:
 
 ### Ruby
 
+Create a PNG badge:
+
 ```ruby
-Inch::Badge::Image.new("example.png", [300, 21, 12, 316]).save
+Inch::Badge::Image.create("example.png", [300, 21, 12, 316])
+```
+
+Create a SVG badge:
+
+```ruby
+Inch::Badge::Image.create("example.svg", [300, 21, 12, 316])
 ```
