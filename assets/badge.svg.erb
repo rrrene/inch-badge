@@ -7,16 +7,38 @@
   </linearGradient>
   <rect rx="4" width="77" height="18" fill="#555"/>
 
+    <linearGradient id="gradA" x2="0" y2="100%">
+      <stop offset="0" stop-color="#66cc40" />
+      <stop offset=".1" stop-color="#49c41a" />
+      <stop offset=".5" stop-color="#46b01e" />
+      <stop offset=".9" stop-color="#359710" />
+      <stop offset="1" stop-color="#2c840b" />
+    </linearGradient>
+    <linearGradient id="gradB" x2="0" y2="100%">
+      <stop offset="0" stop-color="#a5cb34" />
+      <stop offset=".1" stop-color="#95c30c" />
+      <stop offset=".5" stop-color="#87ae10" />
+      <stop offset=".9" stop-color="#719604" />
+      <stop offset="1" stop-color="#618200" />
+    </linearGradient>
+    <linearGradient id="gradC" x2="0" y2="100%">
+      <stop offset="0" stop-color="#db7966" />
+      <stop offset=".1" stop-color="#d75f49" />
+      <stop offset=".5" stop-color="#c05946" />
+      <stop offset=".9" stop-color="#a64735" />
+      <stop offset="1" stop-color="#903b2c" />
+    </linearGradient>
+    <linearGradient id="gradU" x2="0" y2="100%">
+      <stop offset="0" stop-color="#8f7eb4" />
+      <stop offset=".1" stop-color="#8771b3" />
+      <stop offset=".5" stop-color="#7a67a0" />
+      <stop offset=".9" stop-color="#6a598d" />
+      <stop offset="1" stop-color="#5f4f7d" />
+    </linearGradient>
+
   <% x = 0 %>
   <% @grades.each do |grade| %>
-    <linearGradient id="g<%= grade.name %>" x2="0" y2="100%">
-      <stop offset="0" stop-color="#999" stop-opacity=".3"/>
-      <stop offset=".1" stop-color="<%= grade.color %>" stop-opacity=".9"/>
-      <stop offset=".5" stop-color="<%= grade.color %>" stop-opacity="1"/>
-      <stop offset=".9" stop-color="<%= grade.color %>" stop-opacity=".9"/>
-      <stop offset="1" stop-color="#888" stop-opacity=".3"/>
-    </linearGradient>
-    <rect x="<%= 34+x %>" y="4" width="<%= grade.width %>" height="10" fill="url(#g<%= grade.name %>)"/>
+    <rect x="<%= 34+x %>" y="4" width="<%= grade.width %>" height="10" fill="url(#grad<%= grade.name %>)"/>
     <% x += grade.width %>
   <% end %>
 
