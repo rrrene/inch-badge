@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="77" height="18">
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="18">
   <linearGradient id="bg" x2="0" y2="100%">
     <stop offset="0" stop-color="#fff" stop-opacity=".7"/>
     <stop offset=".1" stop-color="#aaa" stop-opacity=".1"/>
     <stop offset=".9" stop-opacity=".3"/>
     <stop offset="1" stop-opacity=".5"/>
   </linearGradient>
-  <rect rx="4" width="77" height="18" fill="#555"/>
+  <rect rx="4" width="80" height="18" fill="#555"/>
 
     <linearGradient id="gradA" x2="0" y2="100%">
       <stop offset="0" stop-color="#66cc40" />
@@ -36,18 +36,22 @@
       <stop offset="1" stop-color="#5f4f7d" />
     </linearGradient>
 
-  <% x = 0 %>
+  <%
+    bar_x = 34 + 3
+    bar_x2 = 73 + 3
+    x = 0
+  %>
   <% @grades.each do |grade| %>
-    <rect x="<%= 34+x %>" y="4" width="<%= grade.width %>" height="10" fill="url(#grad<%= grade.name %>)"/>
+    <rect x="<%= bar_x+x %>" y="4" width="<%= grade.width %>" height="10" fill="url(#grad<%= grade.name %>)"/>
     <% x += grade.width %>
   <% end %>
 
-  <rect x="34" y="4" width="1" height="1" fill="#666"/>
-  <rect x="34" y="13" width="1" height="1" fill="#666"/>
-  <rect x="73" y="4" width="1" height="1" fill="#666"/>
-  <rect x="73" y="13" width="1" height="1" fill="#666"/>
+  <rect x="<%= bar_x %>" y="4" width="1" height="1" fill="#666"/>
+  <rect x="<%= bar_x %>" y="13" width="1" height="1" fill="#666"/>
+  <rect x="<%= bar_x2 %>" y="4" width="1" height="1" fill="#666"/>
+  <rect x="<%= bar_x2 %>" y="13" width="1" height="1" fill="#666"/>
 
-  <rect rx="4" width="77" height="18" fill="url(#bg)"/>
+  <rect rx="4" width="80" height="18" fill="url(#bg)"/>
   <g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="11">
     <text x="18.5" y="13" fill="#010101" fill-opacity=".3">docs</text>
     <text x="18.5" y="12">docs</text>
