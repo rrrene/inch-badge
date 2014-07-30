@@ -5,7 +5,7 @@ module Inch
     module Image
       class SVG < Base
         def save
-          template_content = File.read( Config.image_path('badge.svg.erb') )
+          template_content = File.read( Config.image_path(badge_template) )
           renderer = ERB.new(template_content)
           output = renderer.result(binding)
 
@@ -26,6 +26,10 @@ module Inch
         end
 
         private
+
+        def badge_template
+          "badge-#{style}.svg.erb"
+        end
 
         def load_image(filename)
           @cache ||= {}

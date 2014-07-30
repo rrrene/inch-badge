@@ -2,11 +2,12 @@
 module Inch
   module Badge
     module Image
-      def self.create(filename, numbers)
+      def self.create(filename, numbers, options = {})
+        style = options.fetch(:style, 'default')
         if filename =~ /\.png$/
-          PNG.new(filename, numbers).save
+          PNG.new(filename, numbers, style).save
         elsif filename =~ /\.svg$/
-          SVG.new(filename, numbers).save
+          SVG.new(filename, numbers, style).save
         else
           raise "Unknown data format: #{filename}"
         end

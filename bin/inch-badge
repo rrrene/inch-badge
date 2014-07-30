@@ -13,10 +13,15 @@ $LOAD_PATH.unshift(find_lib_path)
 
 require 'inch/badge'
 
+style = 'default'
+if ARGV.delete('--flat')
+  style = 'flat'
+end
+
 if ARGV.size != 5
   order = Inch::Badge::Config::GRADE_ORDER.join(' ')
   puts "Usage: inch-badge FILENAME #{order}"
   exit 1
 end
 
-Inch::Badge::Image.create(ARGV.shift, ARGV)
+Inch::Badge::Image.create(ARGV.shift, ARGV, {:style => style})
