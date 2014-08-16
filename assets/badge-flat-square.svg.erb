@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="20">
+  <linearGradient id="a" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient>
+  <rect width="80" height="20" fill="#555"/>
+  <rect width="80" height="20" fill="url(#a)"/>
+
+  <linearGradient id="gradA" x2="0" y2="100%">
+    <stop offset="0" stop-color="#46b01e" />
+    <stop offset=".1" stop-color="#46b01e" />
+    <stop offset=".5" stop-color="#46b01e" />
+    <stop offset=".9" stop-color="#46b01e" />
+    <stop offset="1" stop-color="#46b01e" />
+  </linearGradient>
+  <linearGradient id="gradB" x2="0" y2="100%">
+    <stop offset="0" stop-color="#87ae10" />
+    <stop offset=".1" stop-color="#87ae10" />
+    <stop offset=".5" stop-color="#87ae10" />
+    <stop offset=".9" stop-color="#87ae10" />
+    <stop offset="1" stop-color="#87ae10" />
+  </linearGradient>
+  <linearGradient id="gradC" x2="0" y2="100%">
+    <stop offset="0" stop-color="#c05946" />
+    <stop offset=".1" stop-color="#c05946" />
+    <stop offset=".5" stop-color="#c05946" />
+    <stop offset=".9" stop-color="#c05946" />
+    <stop offset="1" stop-color="#c05946" />
+  </linearGradient>
+  <linearGradient id="gradU" x2="0" y2="100%">
+    <stop offset="0" stop-color="#7a67a0" />
+    <stop offset=".1" stop-color="#7a67a0" />
+    <stop offset=".5" stop-color="#7a67a0" />
+    <stop offset=".9" stop-color="#7a67a0" />
+    <stop offset="1" stop-color="#7a67a0" />
+  </linearGradient>
+
+  <%
+    bar_x = 33 + 3
+    bar_x2 = 72 + 3
+    x = 0
+  %>
+  <% @grades.each do |grade| %>
+    <rect x="<%= bar_x+x %>" y="4" width="<%= grade.width %>" height="12" fill="url(#grad<%= grade.name %>)"/>
+    <% x += grade.width %>
+  <% end %>
+
+  <g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="11">
+    <text x="18.5" y="14">docs</text>
+  </g>
+</svg>

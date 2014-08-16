@@ -16,6 +16,8 @@ require 'inch/badge'
 style = 'default'
 if ARGV.delete('--flat')
   style = 'flat'
+elsif ARGV.delete('--flat-square')
+  style = 'flat-square'
 end
 
 if ARGV.size != 5
