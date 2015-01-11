@@ -5,30 +5,27 @@ module Inch
     module Image
       class SVG < Base
         def save
+          add_n_grade! if empty_badge?
+
           template_content = File.read( Config.image_path(badge_template) )
           renderer = ERB.new(template_content)
           output = renderer.result(binding)
 
           File.open(@filename, 'w') {|f| f.write(output) }
-          return
-
-          x = 0
-          @grades.each do |grade|
-            grade.width.times do |i|
-              if x < grade.section_width
-                badge  = load_image( Config.image_path("grade-#{grade.name}-#{grade.prefix(x)}.png") )
-                base_image.compose!(badge, 34+x, 0)
-              end
-              x += 1
-            end
-          end
-
         end
 
         private
 
+        def add_n_grade!
+          @grades << GradeSection.new('N', '#9B9B9B', 100, 100)
+        end
+
         def badge_template
           "badge-#{style}.svg.erb"
+        end
+
+        def empty_badge?
+          @numbers == [0,0,0,0]
         end
 
         def load_image(filename)
