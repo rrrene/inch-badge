@@ -14,7 +14,9 @@ $LOAD_PATH.unshift(find_lib_path)
 require 'inch/badge'
 
 style = 'default'
-if ARGV.delete('--flat')
+if ARGV.delete('--shields')
+  style = 'shields'
+elsif ARGV.delete('--flat')
   style = 'flat'
 elsif ARGV.delete('--flat-square')
   style = 'flat-square'
